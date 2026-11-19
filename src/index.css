@@ -1,0 +1,378 @@
+@import "tailwindcss";
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  background: #f5f7f5;
+  color: #103724;
+  line-height: 1.55;
+}
+body {
+  margin: 0;
+}
+h1,
+h2 {
+  line-height: 1.1;
+  font-weight: 750;
+}
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin: 0.7em 0 0.4em;
+}
+h2 {
+  font-size: 1.2rem;
+  margin: 0.5em 0;
+}
+p {
+  margin: 0.65em 0;
+}
+a {
+  text-underline-offset: 0.2em;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #6a8f25;
+  outline-offset: 3px;
+}
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem max(5vw, 1rem);
+  border-bottom: 1px solid #dce6d8;
+  color: white;
+  background: #103724;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 750;
+  font-size: 1.3rem;
+}
+.hero-copy {
+  background: #103724;
+  color: white;
+  padding: clamp(3rem, 9vw, 8rem) max(5vw, 1rem);
+}
+.hero h1 {
+  font-size: clamp(3rem, 9vw, 7rem);
+  letter-spacing: -0.065em;
+  margin: 0.2em 0;
+}
+.hero-copy > p {
+  max-width: 39ch;
+  font-size: 1.15rem;
+}
+.hero .eyebrow {
+  color: #c8ed76;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+button,
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border-radius: 0.55rem;
+  background: #c8ed76;
+  color: #103724;
+  padding: 0.65rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.secondary {
+  background: transparent;
+  border-color: currentColor;
+  color: inherit;
+}
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  padding: 2rem max(5vw, 1rem);
+}
+.feature-list > div,
+.panel {
+  background: white;
+  border: 1px solid #dce6d8;
+  border-radius: 0.85rem;
+  padding: 1.5rem;
+}
+.panel {
+  margin: 1.25rem auto;
+  width: min(calc(100% - 2rem), 76rem);
+}
+.narrow {
+  max-width: 32rem;
+}
+.narrow a {
+  text-decoration: underline;
+}
+form {
+  display: grid;
+  gap: 0.85rem;
+}
+form button {
+  justify-self: start;
+}
+label {
+  display: grid;
+  gap: 0.3rem;
+  font-weight: 600;
+}
+input:not([type="checkbox"]),
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #a6b8ab;
+  background: white;
+  border-radius: 0.45rem;
+  padding: 0.55rem 0.65rem;
+  color: #103724;
+}
+input[type="checkbox"] {
+  width: auto;
+}
+[role="alert"] {
+  color: #a12424;
+}
+[aria-current="page"] {
+  font-weight: 750;
+  text-decoration: underline;
+}
+.workspace {
+  display: grid;
+  grid-template-columns: 14rem minmax(0, 1fr);
+  min-height: 100vh;
+}
+.workspace aside {
+  background: #103724;
+  color: #fff;
+  padding: 1.5rem;
+}
+.workspace nav {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 1.5rem;
+}
+.workspace nav a {
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.4rem;
+}
+.workspace nav a[aria-current] {
+  background: #c8ed76;
+  color: #103724;
+  text-decoration: none;
+}
+.workspace-main {
+  padding: clamp(1rem, 4vw, 3rem);
+  min-width: 0;
+}
+.context-name {
+  color: #466252;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.cards,
+.form-grid,
+.hole-grid,
+.management {
+  display: grid;
+  gap: 1rem;
+}
+.cards,
+.form-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+}
+.hole-grid {
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+}
+.management {
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  align-items: start;
+}
+.tile {
+  display: block;
+  background: white;
+  border: 1px solid #dce6d8;
+  border-radius: 0.75rem;
+  padding: 1.15rem;
+  margin: 0.75rem 0;
+}
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.metric {
+  font-size: 2rem;
+  font-weight: 750;
+}
+.table-scroll {
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background: #fff;
+  font-variant-numeric: tabular-nums;
+}
+th,
+td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid #dce6d8;
+  white-space: nowrap;
+}
+th {
+  background: #eaf2e9;
+}
+fieldset {
+  display: grid;
+  gap: 0.85rem;
+  min-width: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+textarea {
+  min-height: 5rem;
+}
+@media (max-width: 720px) {
+  .workspace,
+  .management {
+    display: block;
+  }
+  .workspace aside {
+    padding: 1rem;
+  }
+  .workspace nav {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.3rem;
+    margin-top: 0.6rem;
+  }
+  .workspace nav a {
+    white-space: nowrap;
+  }
+  .toolbar .actions {
+    margin-top: 0;
+  }
+}
+.scan-preview {
+  display: block;
+  max-height: 30rem;
+  max-width: 100%;
+  object-fit: contain;
+  margin: 0 auto 1rem;
+}
+.viewer {
+  overflow: auto;
+  min-height: 10rem;
+  max-height: 55vh;
+  background: #eaf2e9;
+  padding: 1rem;
+}
+.viewer img {
+  transform-origin: center;
+}
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.uncertain,
+.warning,
+.revision {
+  background: #ffefca;
+  border-radius: 0.4rem;
+  padding: 0.4rem;
+}
+.verification {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+}
+.public-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.25rem;
+  padding: 0.8rem 0;
+  border-block: 1px solid #dce6d8;
+  margin: 1rem 0;
+}
+.stat-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0.65rem;
+  margin: 1rem 0;
+}
+.stat-list dd {
+  font-size: 1.2rem;
+  font-weight: 750;
+}
+.stat-list dt {
+  color: #466252;
+}
+details {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid #dce6d8;
+}
+summary {
+  cursor: pointer;
+}
+h3 {
+  font-weight: 700;
+}
+.tournament-logo {
+  width: 4.5rem;
+  height: 4.5rem;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  margin: 0.25rem 0;
+}
+.site-header > a:last-child {
+  font-weight: 650;
+}
+.tile:hover:where(a) {
+  border-color: #75a184;
+}
+.button:hover,
+button:hover:enabled {
+  filter: brightness(0.95);
+}
+.button,
+button,
+.tile:where(a) {
+  transition:
+    background-color 0.15s,
+    border-color 0.15s,
+    filter 0.15s;
+}
+:focus-visible {
+  scroll-margin: 1rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
